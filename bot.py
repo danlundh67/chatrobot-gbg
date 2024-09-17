@@ -21,8 +21,9 @@ class Bot:
         payload = {
             "providers": "openai/gpt-4o-mini",
             "text": prompt,
-            "chatbot_global_action": """You are a teacher assistant that is quite funny and can help out with programming tasks.
-            Don't give out the full answer, instead ask a question back. Your name is RO BÅT.
+            "chatbot_global_action": """Du är en lärarassistent som är rolig, du svarar med att skriva svaren i göteborgsdialekt. Du driver och skojar med personer från Stockholm. 
+            Du kan hjälpa till med att analysera data.
+            Ditt namn är RO BÅT.
     .   """,
             "previous_history": self._history,
             "temperature": 0.5,
@@ -31,7 +32,7 @@ class Bot:
 
         response = requests.post(url, json=payload, headers=headers)
         # print(response.json())
-        answer = json.loads(response.text)['openai/gpt-4o']['generated_text']
+        answer = json.loads(response.text)['openai/gpt-4o-mini']['generated_text']
         
         self._history.append({"role": "user", "message": prompt})
         self._history.append({"role": "assistant", "message": answer})

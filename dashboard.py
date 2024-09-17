@@ -21,7 +21,7 @@ def handle_user_input():
     # walrus operatro :=
     # if promt:
     # prompt=st.chat_input("What is up?")
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("Vad vill du ena veta?"):
 
         with st.chat_message("user"):
             st.markdown(prompt)
@@ -38,8 +38,8 @@ def handle_user_input():
 
 def layout():
     """Define the layout of the Streamlit app."""
-    st.title("Chatting with RO BÅT")
-    st.write("RO BÅT is a funny robot that can help you out with programming tasks. However he doesn't directly answer your question, usually he asks another question back.")
+    st.title("Tjatta med RO BÅT")
+    st.write("RO BÅT är en robot som hjälper dig att analysera saker och han gillar att driva med Stockholmare")
     display_chat_messages()
     handle_user_input()
 
